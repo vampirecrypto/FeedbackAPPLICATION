@@ -2,6 +2,7 @@
 
 Note: Here only i upload codes of this project, the project is not fully done. Because its my first solo project and i started this project with a zero knowledeges, after that i could learned lots of knowledge about php, MySQL and server configuration...
 
+Do the following steps:
 
 1. Install the softwares SUBLIME TEXT and VISUALSTUDIO CODE...
 ( sublime https://download.sublimetext.com/sublime_text_build_4126_x64_setup.exe )
