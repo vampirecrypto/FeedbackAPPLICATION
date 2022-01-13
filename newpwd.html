@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5 Confirm Password Form with validation Example</title>
+
+
+    <link rel="stylesheet" href="C:\Users\ARAVINTH\Documents\FeedbackApp\newpwd.css">
+    <link rel="stylesheet" href="./newpwd.css">
+    <link rel="text">
+
+
+</head>
+
+<body>
+    <!-- partial:index.partial.html -->
+    <div id="newpwd-form-wrap">
+        <h3>Enter The Secret Code</h3>
+        <form id="newpwd-form">
+            <p>
+                <input type="password" id="password" name="password" placeholder="New Password" required>
+            </p>
+            <p>
+                <input type="password" id="password1" name="password1" placeholder="Confirm password" onkeyup="check(this)" required>
+                <error id="alert"></error>
+            </p>
+            <p>
+                <input type="submit" id="confirm" value="Confirm">
+            </p>
+        </form>
+        <script type="text/javascript">
+            var password = document.getElementById('password');
+            var flag = 1; // 1 -> No error | 0 -> Yes error
+            function check(elem) {
+                if (elem.value.length > 0) {
+                    if (elem.value != password.value) {
+                        document.getElementById('alert').innerText = "Confirm password doesn't match";
+                        flag = 0;
+                    } else {
+                        document.getElementById('alert').innerText = "Password match";
+                        flag = 1;
+                    }
+                } else {
+                    document.getElementById('alert').innerText = "Please enter confirm password ";
+                    flag = 0;
+                }
+            }
+
+            function validate() {
+                if (flag == 1) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        </script>
+    </div>
+    <!--newpwd-form-wrap-->
+    <!-- partial -->
+
+
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5 Text Area Form with validation Example</title>
+
+
+    <link rel="stylesheet" href="C:\Users\ARAVINTH\Documents\FeedbackApp\textarea.css">
+    <link rel="stylesheet" href="./textarea.css">
+    <link rel="text">
+
+
+</head>
+
+<body>
+    <!-- partial:index.partial.html -->
+    <div id="textarea-form-wrap">
+        <h1>Welcome</h1>
+        <form id="textarea-form">
+            <label class="labels">What would you like to share with world?</label><br>
+            <div class="textarea_style">
+                <textarea class="textarea" id="textarea" onkeyup="charCount();" name="textarea_description" rows="20" cols="50" maxlength="1000" minlength="3" placeholder="Enter your comment here...."></textarea>
+            </div>
+            <span class="textarea_count" id="textarea_count">0/1000 (Max Character 1000)</span>
+            <div id="cmt-wrap" name="cmt">
+                <p>
+                    <a href="#">See other comments</a>
+
+                </p>
+            </div>
+            <!--cmt-wrap-->
+            <p>
+                <input type="submit" id="submit" value="Submit">
+            </p>
+        </form>
+    </div>
+    <!--textarea-form-wrap-->
+    <!-- partial -->
+
+    <script type="text/javascript">
+        function charCount() {
+            var element = document.getElementById('textarea').value.length;
+            document.getElementById('textarea_count').innerHTML = element + "/1000 (Max Character 1000).";
+        }
+    </script>
+
+
+</body>
+
+</html>

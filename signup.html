@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5 Signup Form with validation Example</title>
+
+
+    <link rel="stylesheet" href="C:\Users\ARAVINTH\Documents\FeedbackApp\signup.css">
+    <link rel="stylesheet" href="./signup.css">
+    <link rel="text">
+
+
+</head>
+
+<body>
+    <!-- partial:index.partial.html -->
+    <div id="signup-form-wrap">
+        <h3>Sign Up Here</h3>
+        <form id="form" name="form1" action="signup.php" method="post" onsubmit="return validate()">
+            <p>
+                <input type="username" id="username" name="username" placeholder="Username" required>
+
+            </p>
+            <p>
+                <input type="email" id="email" name="email" placeholder="Email" required>
+
+            </p>
+            <p>
+                <input type="password" id="password" name="password" placeholder="Password" required>
+                <span class="text-danger">  </span>
+            </p>
+            <p>
+                <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password" onkeyup="check(this)" required>
+                <error id="alert"></error>
+            </p>
+            <p>
+                <input type="submit" id="sign up" value="Sign Up">
+            </p>
+        </form>
+        <div id="create-account-wrap">
+            <p>Already have an account? <a href="signin.html">Sign In</a></p>
+        </div>
+        <script type="text/javascript">
+            var password = document.getElementById('password');
+            var flag = 1; // 1 -> No error | 0 -> Yes error
+            function check(elem) {
+                if (elem.value.length > 0) {
+                    if (elem.value != password.value) {
+                        document.getElementById('alert').innerText = "Confirm password doesn't match";
+                        flag = 0;
+                    } else {
+                        document.getElementById('alert').innerText = "Password match";
+                        flag = 1;
+                    }
+                } else {
+                    document.getElementById('alert').innerText = "Please enter confirm password ";
+                    flag = 0;
+                }
+            }
+
+            function validate() {
+                if (flag == 1) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        </script>
+        <!--create-account-wrap-->
+    </div>
+    <!--signup-form-wrap-->
+    <!-- partial -->
+
+</body>
+
+</html>
